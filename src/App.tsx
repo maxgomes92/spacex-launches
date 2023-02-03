@@ -1,36 +1,26 @@
+import { Container } from "@mui/system";
+import { LaunchList, SpacerVertical } from './components'
+import useLaunches from './hooks/useLaunches';
 import './App.css';
-import { gql, useQuery } from '@apollo/client';
-
-const FILMS_QUERY = gql`
-  query LaunchesQuery($limit: Int, $sort: String) {
-    launches(limit: $limit, sort: $sort) {
-      upcoming
-      launch_date_utc
-      id
-      mission_name
-    }
-  }
-`;
+import { Typography } from "@mui/material";
 
 function App() {
-  const { data, loading, error } = useQuery(FILMS_QUERY, { variables: { limit: 10 } }) as any
+  const { data, loading, error } = useLaunches()
 
-  if (loading) return <>Loading...</>;
-  if (error) return <pre>{JSON.stringify(error.networkError.result.errors, null, 4)}</pre>
+  if (error) return <pre>{JSON.stringify(error.message, null, 4)}</pre>
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          <h1>SpaceX Launches</h1>
-          <ul>
-            {data.launches.map((launch: any) => (
-              <li key={launch.id}>{launch.launch_date_utc} {launch.mission_name}</li>
-            ))}
-          </ul>
-        </div>
-      </header>
-    </div>
+    <Container className="App">
+      <SpacerVertical height={40} />
+
+      <Typography variant="h2" component="h2" style={{ textAlign: 'center' }}>
+        SpaceX Launches
+      </Typography>
+
+      <SpacerVertical height={100} />
+
+      <LaunchList items={data?.launches} isLoading={loading} />
+    </Container>
   );
 }
 
