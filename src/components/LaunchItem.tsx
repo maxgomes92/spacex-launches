@@ -1,8 +1,7 @@
 import { CSSProperties, PropsWithChildren } from 'react'
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import { Launch } from "../generated/graphql";
-
-const rocketImgUrl = "../../launch.jpg"
+import { rocketImgUrl } from '../utils/constants';
 
 const cardStyle: CSSProperties = { 
   display: 'flex',

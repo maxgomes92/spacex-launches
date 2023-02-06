@@ -18,7 +18,7 @@ export default function HomePage() {
       <SpacerVertical height={40} />
 
       <Typography variant="h2" component="h2" style={{ textAlign: 'center' }}>
-        SpaceX API Reader
+        SpaceX Data Explorer
       </Typography>
 
       <SpacerVertical height={30} />

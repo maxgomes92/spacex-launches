@@ -1,8 +1,8 @@
 import { useQuery, QueryResult } from '@apollo/client';
-import { GetRocketsDocument, Launch } from '../generated/graphql';
+import { GetRocketsDocument, Rocket } from '../generated/graphql';
 
-type LaunchesQuery = { rockets: Launch[] }
+type RocketsQuery = { rockets: Rocket[] }
 
-export default function useRockets(): QueryResult<LaunchesQuery> {
-  return useQuery<LaunchesQuery>(GetRocketsDocument);
+export default function useRockets(): QueryResult<RocketsQuery> {
+  return useQuery<RocketsQuery>(GetRocketsDocument);
 }
