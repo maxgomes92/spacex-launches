@@ -12,6 +12,12 @@ const cardStyle: CSSProperties = {
 export type Props = PropsWithChildren<{ item: Launch }>
 
 export default function LaunchItem({ item }: Props) {
+  const learnMoreOnClick = () => {
+    if (!item.links?.article_link) return
+
+    window.open(item.links.article_link)
+  }
+
   return (
     <Card sx={{ width: 345, height: '100%' }} style={cardStyle}>
       <CardMedia
@@ -32,8 +38,9 @@ export default function LaunchItem({ item }: Props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={learnMoreOnClick} disabled={!!!item.links?.article_link}>
+          Learn More
+        </Button>
       </CardActions>
     </Card>
   )

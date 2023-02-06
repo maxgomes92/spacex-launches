@@ -16,7 +16,7 @@ export default function LaunchList({ items, isLoading }: Props) {
   return (
     <Grid container spacing={2}>
       {(items || loadingList).map((item) => (
-        <Grid md={6} lg={4} style={gridStyle}>
+        <Grid md={6} lg={4} style={gridStyle} key={item.id} item>
           <div>
             {isLoading && <Skeleton variant="rectangular" width={345} height={320} />}            
             {!isLoading && <LaunchItem item={item} />}

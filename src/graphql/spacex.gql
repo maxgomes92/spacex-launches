@@ -1,11 +1,15 @@
-query GetLaunches($limit: Int, $sort: String) {
-  launches(limit: $limit, sort: $sort) {
+# API issues found along the way:
+# Sorting doesn't work, wanted to sort from latest to oldest
+# Offset doesn't work, it offsets but only within limit, which makes it impossible to paginate
+query GetLaunches($limit: Int) {
+  launches(limit: $limit) {
     upcoming
     launch_date_utc
     id
     mission_name
     links {
       flickr_images
+      article_link
     }
     rocket {
       rocket_name
