@@ -1,13 +1,13 @@
-import { Container } from "@mui/system";
-import { LaunchList, SpacerVertical } from './components'
-import useLaunches from './hooks/useLaunches';
-import './App.css';
-import { Button, Typography } from "@mui/material";
 import { useState } from "react";
+import { Container } from "@mui/system";
+import { Button, Typography } from "@mui/material";
+import { LaunchList, SpacerVertical } from '../../components'
+import useLaunches from '../../hooks/useLaunches';
+import './launches.css';
 
 const limit = 100, step = 10;
 
-function App() {
+export default function LaunchesPage() {
   const [listPointer, setOffset] = useState(step)
   const { data, loading, error } = useLaunches(limit)
   
@@ -39,5 +39,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;

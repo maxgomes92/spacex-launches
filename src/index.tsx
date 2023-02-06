@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import LaunchesPage from './pages/launches';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import './index.css';
@@ -28,7 +28,7 @@ root.render(
   <ApolloProvider client={client}>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <App />
+      <LaunchesPage />
     </ThemeProvider>
   </ApolloProvider>
 );
