@@ -3,7 +3,6 @@ import { Container } from "@mui/system";
 import { Button, Typography } from "@mui/material";
 import { LaunchList, SpacerVertical } from '../../components'
 import useLaunches from '../../hooks/useLaunches';
-import './launches.css';
 
 const limit = 100, step = 10;
 
@@ -18,7 +17,7 @@ export default function LaunchesPage() {
   if (error) return <pre>{JSON.stringify(error.message, null, 4)}</pre>
 
   return (
-    <Container className="App">
+    <Container>
       <SpacerVertical height={40} />
 
       <Typography variant="h2" component="h2" style={{ textAlign: 'center' }}>
