@@ -9,7 +9,7 @@ const gridStyle = {
   paddingBottom: 25,
 }
 
-const loadingList = Array(6).fill(0)
+const loadingList = Array(6).fill(0).map(el => ({ id: Math.random().toString(32)}))
 
 export default function CardList({ items, isLoading, children }: Props) {
   return (

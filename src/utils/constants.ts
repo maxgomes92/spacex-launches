@@ -1,4 +1,4 @@
-export const rocketImgUrl = "%PUBLIC_URL%/launch.jpg"
+export const rocketImgUrl = "./launch.jpg"
 
 export const imageByRocketName:Record<string, string> = {
   'Falcon 1': './falcon1.jpg',
