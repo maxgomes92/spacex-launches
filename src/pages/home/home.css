@@ -1,0 +1,8 @@
+.navigation-link {
+  transition: 0.5s scale;
+  cursor: pointer;
+}
+
+.navigation-link:hover {
+  scale: 1.5;
+}

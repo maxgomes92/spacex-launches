@@ -1,9 +1,38 @@
+import { Link, Typography } from "@mui/material";
 import { Container } from "@mui/system";
+import { useNavigate } from "react-router-dom";
+import { SpacerVertical } from "../../components";
+import './home.css'
 
-export default function HomePage () {
+const linksStyle = {
+  display: 'flex',
+  justifyContent: 'space-evenly',
+  fontSize: 30,
+}
+
+export default function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <Container>
-      Home Page
+      <SpacerVertical height={40} />
+
+      <Typography variant="h2" component="h2" style={{ textAlign: 'center' }}>
+        SpaceX API Reader
+      </Typography>
+
+      <SpacerVertical height={30} />
+
+      <Typography variant="h6" component="h6" style={{ textAlign: 'center' }}>
+        What would you like to see?
+      </Typography>
+
+      <SpacerVertical height={120} />
+
+      <div style={linksStyle}>
+        <Link onClick={() => navigate('rockets')} underline="none" className='navigation-link'>Rockets 🚀</Link>
+        <Link onClick={() => navigate('launches')} underline="none" className='navigation-link'>Launches 🌎</Link>
+      </div>
     </Container>
   )
 }
