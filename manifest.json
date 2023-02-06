@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SpaceX Data Explorer",
+  "name": "Web site to explore SpaceX Rockets and Launches",
   "icons": [
     {
       "src": "favicon.ico",
