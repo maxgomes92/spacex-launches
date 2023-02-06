@@ -2,6 +2,7 @@
   "name": "spacex-launches",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://maxgomes92.github.io/spacex-launches",
   "dependencies": {
     "@apollo/client": "^3.7.6",
     "@emotion/react": "^11.10.5",
