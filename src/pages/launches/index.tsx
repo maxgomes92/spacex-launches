@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container } from "@mui/system";
 import { Button, Typography } from "@mui/material";
-import { LaunchList, SpacerVertical } from '../../components'
+import { LaunchItem, CardList, SpacerVertical } from '../../components'
 import useLaunches from '../../hooks/useLaunches';
 
 const limit = 100, step = 10;
@@ -26,7 +26,11 @@ export default function LaunchesPage() {
 
       <SpacerVertical height={100} />
 
-      <LaunchList items={data?.launches.slice(0, listPointer)} isLoading={loading} />
+      <CardList items={data?.launches.slice(0, listPointer)} isLoading={loading}>
+        {(item) => (
+          <LaunchItem item={item} />
+        )}  
+      </CardList>
 
       <SpacerVertical height={20} />
 

@@ -17,3 +17,27 @@ query GetLaunches($limit: Int) {
     details
   }
 }
+
+query GetRockets($limit: Int) {
+  rockets(limit: $limit) {
+    company
+    id
+    height {
+      meters
+    }
+    diameter {
+      meters
+    }
+    description
+    cost_per_launch
+    boosters
+    mass {
+      kg
+    }
+    name
+    stages
+    success_rate_pct
+    wikipedia
+    type
+  }
+}

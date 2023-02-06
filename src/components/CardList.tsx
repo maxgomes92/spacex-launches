@@ -1,8 +1,7 @@
+import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import { Grid, Skeleton } from "@mui/material";
-import { Launch } from "../generated/graphql";
-import LaunchItem from "./LaunchItem";
 
-type Props = { items?: Launch[], isLoading: boolean }
+type Props = { items?: any[], isLoading: boolean, children: (item: any) => ReactJSXElement }
 
 const gridStyle = {
   display: 'flex',
@@ -12,14 +11,14 @@ const gridStyle = {
 
 const loadingList = Array(6).fill(0)
 
-export default function LaunchList({ items, isLoading }: Props) {
+export default function CardList({ items, isLoading, children }: Props) {
   return (
     <Grid container spacing={2}>
       {(items || loadingList).map((item) => (
         <Grid md={6} lg={4} style={gridStyle} key={item.id} item>
           <div>
             {isLoading && <Skeleton variant="rectangular" width={345} height={320} />}            
-            {!isLoading && <LaunchItem item={item} />}
+            {!isLoading && children(item)}
           </div>
         </Grid>
       ))}
