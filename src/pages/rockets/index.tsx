@@ -1,5 +1,5 @@
 import { Container } from "@mui/system";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { CardList, SpacerVertical } from '../../components'
 import useRockets from "../../hooks/useRockets";
 import RocketItem from "../../components/RocketItem";

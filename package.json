@@ -26,10 +26,12 @@
   "scripts": {
     "prestart": "npm run generate",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run generate && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate": "graphql-codegen --config ./codegen.ts"
+    "generate": "graphql-codegen --config ./codegen.ts",
+    "predeploy": "NODE_ENV=production npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +54,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^3.0.0",
     "@graphql-codegen/client-preset": "^2.0.0",
+    "gh-pages": "^5.0.0",
     "ts-node": "^10.9.1"
   }
 }
