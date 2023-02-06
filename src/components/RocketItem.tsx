@@ -21,8 +21,8 @@ export default function RocketItem({ item }: Props) {
     <Card sx={{ width: 345, height: '100%' }} style={cardStyle}>
       <CardMedia
         component="img"
-        alt="green iguana"
-        height="140"
+        alt="Rocket image"
+        height="180"
         image={item.name ? imageByRocketName[item.name] : rocketImgUrl}
       />
       <CardContent style={{ flexGrow: 1 }}>
