@@ -1,6 +1,6 @@
 import { CSSProperties, PropsWithChildren } from 'react'
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
-import Launch from "../types/Launch";
+import { Launch } from "../generated/graphql";
 
 const rocketImgUrl = "https://cloudfront-us-east-2.images.arcpublishing.com/reuters/TXDGVXPBEVMY5PA2RHRF2EA25Y.jpg"
 
@@ -18,7 +18,7 @@ export default function LaunchItem({ item }: Props) {
         component="img"
         alt="green iguana"
         height="140"
-        image={item.links.flickr_images[0] || rocketImgUrl}
+        image={item.links?.flickr_images?.[0] || rocketImgUrl}
       />
       <CardContent style={{ flexGrow: 1 }}>
         <Typography gutterBottom variant="h5" component="div">

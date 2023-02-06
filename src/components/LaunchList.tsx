@@ -1,5 +1,5 @@
 import { Grid, Skeleton } from "@mui/material";
-import Launch from "../types/Launch";
+import { Launch } from "../generated/graphql";
 import LaunchItem from "./LaunchItem";
 
 type Props = { items?: Launch[], isLoading: boolean }

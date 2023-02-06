@@ -1,0 +1,15 @@
+query GetLaunches($limit: Int, $sort: String) {
+  launches(limit: $limit, sort: $sort) {
+    upcoming
+    launch_date_utc
+    id
+    mission_name
+    links {
+      flickr_images
+    }
+    rocket {
+      rocket_name
+    }
+    details
+  }
+}
