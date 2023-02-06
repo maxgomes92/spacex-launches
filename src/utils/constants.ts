@@ -1,3 +1,12 @@
+export const rocketImgUrl = "../../launch.jpg"
+
+export const imageByRocketName:Record<string, string> = {
+  'Falcon 1': './falcon1.jpg',
+  'Falcon 9': './falcon9.jpg',
+  'Falcon Heavy': './falconheavy.jpg',
+  'Starship': './starship.jpg',
+}
+
 const isProduction = process.env.NODE_ENV === 'production'
 const GITPAGES_PATH = '/spacex-launches'
 

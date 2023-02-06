@@ -18,8 +18,8 @@ query GetLaunches($limit: Int) {
   }
 }
 
-query GetRockets($limit: Int) {
-  rockets(limit: $limit) {
+query GetRockets() {
+  rockets {
     company
     id
     height {

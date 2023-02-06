@@ -1,20 +1,13 @@
-import { useState } from "react";
 import { Container } from "@mui/system";
 import { Button, Typography } from "@mui/material";
 import { CardList, SpacerVertical } from '../../components'
 import useRockets from "../../hooks/useRockets";
-
-const limit = 100, step = 10;
+import RocketItem from "../../components/RocketItem";
 
 export default function RocketsPage() {
-  const [listPointer, setOffset] = useState(step)
-  const { data, loading, error } = useRockets(limit)
-  
-  const loadMoreOnClick = () => {
-    setOffset(listPointer + step)
-  }
+  const { data, loading, error } = useRockets()
 
-  // if (error) return <pre>{JSON.stringify(error.message, null, 4)}</pre>
+  if (error) return <pre>{JSON.stringify(error.message, null, 4)}</pre>
 
   return (
     <Container>
@@ -26,15 +19,11 @@ export default function RocketsPage() {
 
       <SpacerVertical height={100} />
 
-      {/* <CardList items={data?.launches.slice(0, listPointer)} isLoading={loading} /> */}
-
-      <SpacerVertical height={20} />
-
-      <div style={{ textAlign: 'center' }}>
-        <Button variant='outlined' onClick={loadMoreOnClick}>Load more launches</Button>
-      </div>
-
-      <SpacerVertical height={20} />
+      <CardList items={data?.rockets} isLoading={loading}>
+        {(item) => (
+          <RocketItem item={item} />
+        )}  
+      </CardList>
     </Container>
   );
 }
