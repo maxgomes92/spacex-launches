@@ -37,7 +37,7 @@ export default function LaunchItem({ item }: Props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={learnMoreOnClick} disabled={!!!item.links?.article_link}>
+        <Button size="small" onClick={learnMoreOnClick} disabled={!!!item.links?.article_link} data-testid='learn-more-button'>
           Learn More
         </Button>
       </CardActions>

@@ -43,7 +43,7 @@ export default function RocketItem({ item }: Props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={learnMoreOnClick} disabled={!!!item.wikipedia}>
+        <Button size="small" onClick={learnMoreOnClick} disabled={!!!item.wikipedia} data-testid="learn-more-button">
           Learn More
         </Button>
       </CardActions>

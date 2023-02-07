@@ -17,7 +17,7 @@ export default function CardList({ items, isLoading, children }: Props) {
       {(items || loadingList).map((item) => (
         <Grid md={6} lg={4} style={gridStyle} key={item.id} item>
           <div>
-            {isLoading && <Skeleton variant="rectangular" width={345} height={320} />}            
+            {isLoading && <Skeleton variant="rectangular" width={345} height={320} data-testid='skeleton-card' />}
             {!isLoading && children(item)}
           </div>
         </Grid>
