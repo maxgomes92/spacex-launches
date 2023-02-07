@@ -39,5 +39,6 @@ query GetRockets {
     success_rate_pct
     wikipedia
     type
+    country
   }
 }
