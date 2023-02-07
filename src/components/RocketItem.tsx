@@ -18,7 +18,7 @@ export default function RocketItem({ item }: Props) {
   }
 
   return (
-    <Card sx={{ width: 345, height: '100%' }} style={cardStyle}>
+    <Card sx={{ width: 345, height: '100%' }} style={cardStyle} data-testid='rocket-item'>
       <CardMedia
         component="img"
         alt="Rocket image"

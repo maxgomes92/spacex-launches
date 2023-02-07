@@ -1,7 +1,7 @@
 import { Container } from "@mui/system";
 import { Button, Typography } from "@mui/material";
 import { CardList, SpacerVertical } from '../../components'
-import useRockets from "../../hooks/useRockets";
+import { useRockets } from "../../hooks";
 import RocketItem from "../../components/RocketItem";
 import { useState } from "react";
 import { Rocket } from "../../generated/graphql";
@@ -10,7 +10,13 @@ export default function RocketsPage() {
   const [sorted, setSorted] = useState<Rocket[]>()
   const { data, loading, error } = useRockets()
 
-  if (error) return <pre>{JSON.stringify(error.message, null, 4)}</pre>
+  if (error) {
+    return (
+      <div data-testid='rockets-error-message'>
+        {error.message}
+      </div>
+    )
+  }
 
   const sortByWeight = () => {
     if (!data?.rockets) return;

@@ -30,8 +30,12 @@ export default function HomePage() {
       <SpacerVertical height={120} />
 
       <div style={linksStyle}>
-        <Link onClick={() => navigate('rockets')} underline="none" className='navigation-link'>Rockets 🚀</Link>
-        <Link onClick={() => navigate('launches')} underline="none" className='navigation-link'>Launches 🌎</Link>
+        <Link onClick={() => navigate('rockets')} underline="none" className='navigation-link' data-testid='rockets-link'>
+          Rockets 🚀
+        </Link>
+        <Link onClick={() => navigate('launches')} underline="none" className='navigation-link' data-testid='launches-link'>
+          Launches 🌎
+        </Link>
       </div>
     </Container>
   )
